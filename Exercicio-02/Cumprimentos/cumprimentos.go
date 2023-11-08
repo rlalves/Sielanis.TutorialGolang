@@ -16,6 +16,19 @@ func Ola(nome string) (string, error){
 	return mensagem, nil
 }
 
+func Olas(nomes []string) (map[string]string, error) {
+	mensagens := make(map[string]string)
+	for _, nome := range nomes {
+		mensagem, erro := Ola(nome)
+		if erro != nil {
+			return nil, erro
+		}
+		mensagens[nome] = mensagem
+	}
+
+	return mensagens, nil
+}
+
 func FormatosDeOla() string {
 	formatos := []string{
 		"Olá, %v. Bem vindo!",

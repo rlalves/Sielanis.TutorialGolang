@@ -10,10 +10,12 @@ func main() {
 	log.SetPrefix("Log: ")
 	log.SetFlags(0)
 
-	mensagem, erro := Cumprimentos.Ola("Rodrigo")
+	nomes := []string{"Rodrigo", "Pedro", "Davi", "Fulano", "Ciclano", "Beltrano"}
+	mensagens, erro := Cumprimentos.Olas(nomes)
+
 	if erro != nil {
 		log.Fatal(erro)
 	}
 
-	fmt.Println(mensagem)
+	fmt.Println(mensagens)
 }
