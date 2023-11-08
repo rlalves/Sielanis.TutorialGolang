@@ -1,9 +1,16 @@
 package Cumprimentos
 
-import "fmt"
+import (
+	"fmt"
+	"errors"
+)
 
-func Ola(nome string) string{
+func Ola(nome string) (string, error){
+	if nome == "" {
+		return "", errors.New("Nome vazio.")
+	}
+
 	var mensagem string
 	mensagem = fmt.Sprintf("Olá, %v. Bem vindo!", nome)
-	return mensagem
+	return mensagem, nil
 }
