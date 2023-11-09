@@ -14,6 +14,10 @@ func InserirHabilidade(habilidade string, descricao string) {
 	repositorio.InserirHabilidade(habilidade, descricao)
 }
 
+func ExcluirHabilidade(id int) {
+	repositorio.ExcluirHabilidade(id)
+}
+
 func ObterQuantidadeDeHabilidades() int {
 	quantidade := repositorio.ObterQuantidadeDeHabilidades()
 	return quantidade

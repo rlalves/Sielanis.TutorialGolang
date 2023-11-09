@@ -53,6 +53,17 @@ func InserirHabilidade(habilidade string, descricao string) {
 	FechaConexao()
 }
 
+func ExcluirHabilidade(id int) {
+	AbrirConexao()
+
+	stmt, erro := db.Prepare("DELETE FROM Habilidades WHERE id = ?")
+	ChecagemDeErro(erro)
+
+	stmt.Exec(id)
+
+	FechaConexao()
+}
+
 func ObterQuantidadeDeHabilidades() int {
 	AbrirConexao()
 
